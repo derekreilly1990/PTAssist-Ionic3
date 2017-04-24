@@ -1,0 +1,53 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Add Program</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bgAuth">
+  <form [formGroup]="program" (ngSubmit)="addClientProgram()">
+    <ion-item>
+      <ion-label color="primary" stacked>Program Name</ion-label>
+      <ion-input type="text" formControlName="title" placeholder="Enter Program name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Program description</ion-label>
+      <ion-textarea formControlName="description" placeholder="Enter Instructions"></ion-textarea>
+    </ion-item>
+    <div formArrayName="exercises">
+
+      <div *ngFor="let exercise of program.controls.exercises.controls; let i=index" class="exerciseBox">
+
+          <div>
+            <span>Exercise {{i + 1}}</span>
+            <span *ngIf="program.controls.exercises.controls.length > 1" (click)="removeExercise(i)" color="danger"> <ion-icon name="remove"></ion-icon>Remove</span>
+            <span (click)="addExercise()" color="danger"> <ion-icon name="add"></ion-icon>Add Exercise</span>
+          </div>
+
+        <div [formGroupName]="i">
+          <div>
+            <ion-item>
+              <ion-label color="primary" stacked>exercise</ion-label>
+              <ion-select formControlName="exercise">
+                <ion-option *ngFor="let exercise of exerciseService.exercises" value="{{exercise._id}}">
+                  {{exercise.name}}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label color="primary" stacked>Sets</ion-label>
+              <ion-input type="text" formControlName="sets" placeholder="Enter Number of sets"></ion-input>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button ion-button block round color="danger" type="submit" [disabled]="!program.valid">Submit</button>
+    <button ion-button block round color="danger" (click)="dismiss()" >Cancel</button>
+  </form>
+</ion-content>

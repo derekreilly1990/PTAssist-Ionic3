@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Create an Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgAuth">
+  <ion-row >
+    <ion-col>
+      <ion-list inset>
+
+        <ion-item>
+          <ion-label><ion-icon name="mail"></ion-icon></ion-label>
+          <ion-input [(ngModel)]="email" placeholder="Email" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><ion-icon name="person"></ion-icon></ion-label>
+          <ion-input [(ngModel)]="name" placeholder="Name" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+          <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Role</ion-label>
+          <ion-select [(ngModel)]="role">
+            <ion-option value="trainer">Trainer</ion-option>
+            <ion-option value="client">Client</ion-option>
+            <ion-option value="admin">Admin</ion-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+
+      <button ion-button block round color="danger" (click)="register()" >Register</button>
+
+    </ion-col>
+  </ion-row>
+
+</ion-content>

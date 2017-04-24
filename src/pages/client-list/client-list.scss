@@ -1,0 +1,59 @@
+page-client-list {
+  .bgAuth {
+    background-image: url('../assets/img/bg92sq.jpg');
+    background-size: cover;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  ion-list{
+    background-color: transparent !important;
+    ion-item-sliding{
+      background-color: transparent !important;
+
+      ion-item{
+
+        ion-card{
+          background-color: color($colors, danger) !important;
+          color: color($colors, light) !important;
+          ion-card-header{
+            color: color($colors, light) !important;
+          }
+
+        }
+      }
+    }
+  }
+  .img-container {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    align-content: center;
+
+  }
+  .item {
+    background-color: transparent;
+    border: none !important;
+    .item-inner {
+      border-bottom: 0.55px solid rgba(255, 255, 255, 0.4) !important;
+      ion-input {
+        color: color($colors, dark);
+        font-weight: bold;
+      }
+      ion-label {
+        color: color($colors, dark);
+        font-weight: bold;
+        font-size: large;
+      }
+    }
+  }
+
+
+
+
+}

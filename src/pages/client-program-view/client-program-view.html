@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Program View</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bgAuth" padding>
+  <ion-grid>
+
+  <ion-label  stacked><h2>Current Programs</h2> </ion-label>
+  <ion-list >
+    <ion-item *ngFor="let currentprogram of clientService.currentclient.programs" (click)=" setSelected(currentprogram)" >
+
+       <h2 ion-text color="light">{{currentprogram.title}}</h2>
+
+    </ion-item>
+  </ion-list >
+
+
+  <ion-list transparent>
+    <ion-item-sliding *ngFor="let programexercise of selectedProgram?.exercises" transparent>
+      <ion-item>
+
+
+        <ion-row wrap>
+          <ion-col width-25>
+            <ion-thumbnail item-left>
+              <img src="{{programexercise.exercise.image}}">
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col width-75 center >
+
+            <h2>{{programexercise.exercise.name}}</h2>
+
+          </ion-col>
+        </ion-row>
+        <ion-row wrap>
+          <ion-col text-wrap>
+            <div>
+              <p>Instructions: {{programexercise.exercise.description}}</p>
+              <p>Sets : {{programexercise.sets}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button (click)="showVideo(exercise.details)">
+          <ion-icon name="videocam"></ion-icon>
+          video
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  </ion-grid>
+</ion-content>

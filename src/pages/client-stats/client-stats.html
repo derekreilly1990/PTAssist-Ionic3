@@ -1,0 +1,30 @@
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Client Stats
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content class="bgAuth">
+
+  <button  *ngIf="authService.user_role == 'client'" ion-button block round color="danger" (click)="showWeightPrompt()">
+    <ion-icon name="add"></ion-icon>
+    Add weight
+  </button>
+  <ion-card color="dark">
+    <ion-card-header>
+      Bodyweight
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Exercise Database
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showAddExerciseModal()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgAuth">
+  <ion-list>
+    <ion-item-sliding *ngFor="let exercise of exerciseService.exercises" transparent>
+      <ion-item>
+              <img src="{{exercise.image}}">
+              {{exercise.name}}
+              <p>{{exercise.description}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteExercise(exercise)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button (click)="showVideo(exercise)">
+          <ion-icon name="videocam"></ion-icon>
+          video
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

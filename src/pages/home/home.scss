@@ -1,0 +1,30 @@
+page-home {
+
+  ion-row {
+    color: white;
+  }
+  button {
+    background-color: #ff0000;
+    color: #ff0000;
+  }
+  .bgAuth {
+    background-image: url('../assets/img/bg92sq.jpg');
+    background-size: cover;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .img-container{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    align-content: center;
+
+  }
+
+}

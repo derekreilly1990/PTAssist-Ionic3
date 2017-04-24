@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Diet
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bgAuth" >
+  <button  *ngIf="this.authService.user.role == 'trainer'" ion-button block round color="danger" (click)="showDietPrompt()">
+    <ion-icon name="add"></ion-icon>
+    Update Diet
+  </button>
+  <ion-item >
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          Calories
+        </ion-col>
+        <ion-col *ngIf="clientService.currentclient.diet[clientService.currentclient.diet.length -1]?.calories ">
+          {{latestdiet?.calories}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item >
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          Protein(%)
+        </ion-col>
+        <ion-col *ngIf="latestdiet?.protein ">
+          {{latestdiet?.protein}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item >
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          Fats(%)
+        </ion-col>
+        <ion-col *ngIf="latestdiet?.fats ">
+          {{latestdiet?.fats}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item >
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          Carbs(%)
+        </ion-col>
+        <ion-col *ngIf="latestdiet?.carbs ">
+          {{latestdiet?.carbs}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item >
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          Fiber(grams)
+        </ion-col>
+        <ion-col *ngIf="latestdiet?.fiber ">
+          {{latestdiet?.fiber}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+</ion-content>

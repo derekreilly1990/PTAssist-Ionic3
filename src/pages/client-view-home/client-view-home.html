@@ -1,0 +1,59 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Client Home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bgAuth">
+
+  <ion-card padding class="bg-red">
+    <ion-row>
+      <ion-col >
+        <ion-icon name="person"></ion-icon>
+        <h1 color="dark"><strong>{{clientService.currentclient?.name.toUpperCase()}}</strong></h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col >
+        <ion-item color="danger"><ion-icon name="mail" item-left></ion-icon>{{clientService.currentclient?.email}}</ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col >
+        <ion-item color="danger"><ion-icon name="body" item-left></ion-icon>{{clientService.currentclient?.stats.bodyweight[clientService.currentclient?.stats.bodyweight.length -1].measurement}}</ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <!-- Unfinished -->
+  <!--<button ion-button block round color="danger"  (click)="goToClientDetailPage(client)">-->
+    <!--<ion-icon name="person"></ion-icon>-->
+    <!--Details-->
+  <!--</button>-->
+
+
+  <button  ion-button block round color="danger" (click)="goToClientProgramPage(client)">
+    <ion-icon name="bicycle"></ion-icon>
+    Program
+  </button>
+
+
+  <button  ion-button block round color="danger" (click)="goToClientDietPage(client)">
+    <ion-icon name="pizza"></ion-icon>
+    Diet
+  </button>
+
+  <button  ion-button block round color="danger" (click)="goToClientStatsPage(client)">
+    <ion-icon name="pulse"></ion-icon>
+    Stats
+  </button>
+
+  <button  ion-button block round color="danger" (click)="logOut()">
+    <ion-icon name="power"></ion-icon>
+    Log Out
+  </button>
+
+</ion-content>

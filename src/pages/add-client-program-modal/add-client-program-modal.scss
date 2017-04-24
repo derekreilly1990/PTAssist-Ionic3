@@ -1,0 +1,61 @@
+
+.bgAuth {
+  background-image: url('../assets/img/bg92sq.jpg');
+  background-size: cover;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+form {
+
+
+  margin-bottom: 32px;
+  button {
+    margin-top: 20px;
+  }
+}
+
+
+p {
+  font-size: 0.8em;
+  color: color($colors, danger);
+}
+.item {
+  background-color: transparent;
+  border: none !important;
+  .item-inner {
+    border-bottom: 0.55px solid rgba(255, 255, 255, 0.4) !important;
+    ion-input {
+      color: color($colors, light);
+      font-weight: bold ;
+    }
+    ion-label {
+      color: color($colors, light);
+      font-weight: bold ;
+      font-size: large;
+    }
+  }
+}
+
+ion-label {
+  margin-left: 5px;
+  background-color: transparent;
+  color: color($colors, light);
+}
+
+ion-input {
+  padding: 5px;
+  background-color: transparent;
+
+}
+ion-item{
+  background-color: transparent;
+}
+
+
